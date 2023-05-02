@@ -8,9 +8,9 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
 	const graphQLClient = new GraphQLClient(endpoint);
 	const referringURL = ctx.req.headers?.referer || null;
 	let pathArr = ctx.query.postpath as Array<string>;
-	const aindex = pathArr.indexOf('api');
-	if (aindex !== -1) {
-		pathArr.splice(aindex, 1);
+	const array_index = pathArr.indexOf('api');
+	if (array_index != -1) {
+		pathArr.splice(array_index, 1);
 	}
 	const path = pathArr.join('/');
 	console.log(path);
@@ -88,11 +88,11 @@ const Post: React.FC<PostProps> = (props) => {
 		if (_return_array.length < 6) {
 			for (let i = 0; i < 5; i++) {
 				if (_return_array[i]) {
-					_objectFit_arra[i]="cover";
+					_objectFit_array[i]="cover";
 				} else {
 					_return_array[i]=_return_array[_index_row];
 					_index_row++;
-					_objectFit_arra[i]="contain";
+					_objectFit_array[i]="contain";
 				}
 			} 
 		}else{
