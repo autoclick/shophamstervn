@@ -1,7 +1,7 @@
 import React from 'react';
 import { GetServerSideProps } from 'next';
 import { GraphQLClient, gql } from 'graphql-request';
-import { ImageResponse } from 'vercel/og';
+import { ImageResponse } from '@vercel/og';
 
 export const getServerSideProps: GetServerSideProps = async (ctx) => {
 	const endpoint = process.env.GRAPHQL_ENDPOINT as string;
@@ -28,7 +28,7 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
 	}
 	const query = gql`
 		{
-			post(id: "/${path}/", idType: URI) {
+			post(id: "/20-buc-anh-cuc-hai-huoc/", idType: URI) {
 				id
 				content
 			}
