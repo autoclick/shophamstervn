@@ -1,7 +1,6 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import { GraphQLClient, gql } from 'graphql-request';
 import { ImageResponse } from '@vercel/og';
-import { Image } from 'next/image';
 
 const endpoint = process.env.GRAPHQL_ENDPOINT as string;
 const graphQLClient = new GraphQLClient(endpoint);
@@ -85,12 +84,12 @@ export default async function handler() {
                   flexDirection: 'row',
                 }}
             >
-              <Image style={{ right: 5, bottom: 5, objectFit: '${_objectFit_array[0]}' }}
+              <img style={{ right: 5, bottom: 5, objectFit: '${_objectFit_array[0]}' }}
                 alt="avatar"
                 width="600"
                 height="800"
                 src="${_return_array[0]}"
-              /> <Image style={{ bottom: 5, objectFit: '${_objectFit_array[1]}' }}
+              /> <img style={{ bottom: 5, objectFit: '${_objectFit_array[1]}' }}
                 alt="avatar"
                 width="600"
                 height="800"
@@ -104,13 +103,13 @@ export default async function handler() {
                 flexDirection: 'row',
               }}
             >
-              <Image style={{ right: 10, objectFit: '${_objectFit_array[2]}' }}
+              <img style={{ right: 10, objectFit: '${_objectFit_array[2]}' }}
                 alt="avatar"
                 width="400"
                 height="400"
                 src="${_return_array[2]}"
               />
-              <Image style={{ right: 5, objectFit: '${_objectFit_array[3]}' }}
+              <img style={{ right: 5, objectFit: '${_objectFit_array[3]}' }}
                 alt="avatar"
                 width="400"
                 height="400"
@@ -121,7 +120,7 @@ export default async function handler() {
               {
                 display: 'flex'
               }}>
-              <Image style={{ objectFit: '${_objectFit_array[4]}' }}
+              <img style={{ objectFit: '${_objectFit_array[4]}' }}
                 alt="avatar"
                 width="400"
                 height="400"
