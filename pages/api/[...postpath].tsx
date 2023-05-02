@@ -1,5 +1,6 @@
 import React from 'react';
 import { GetServerSideProps } from 'next';
+import { Image } from 'next/image';
 import { GraphQLClient, gql } from 'graphql-request';
 import { ImageResponse } from '@vercel/og';
 
@@ -61,20 +62,20 @@ const Post: React.FC<PostProps> = (props) => {
 	const { post, host, path } = props;
 	let _return_array = post.content.match(/(https?:\/\/\S+(?:png|jpe?g|gif))/);
 	const shuffle = (array: Array<string>) => {
-		let currentIndex = array.length,  randomIndex;
-	  
+		let currentIndex = array.length, randomIndex;
+
 		// While there remain elements to shuffle.
 		while (currentIndex != 0) {
-	  
-		  // Pick a remaining element.
-		  randomIndex = Math.floor(Math.random() * currentIndex);
-		  currentIndex--;
-	  
-		  // And swap it with the current element.
-		  [array[currentIndex], array[randomIndex]] = [
-			array[randomIndex], array[currentIndex]];
+
+			// Pick a remaining element.
+			randomIndex = Math.floor(Math.random() * currentIndex);
+			currentIndex--;
+
+			// And swap it with the current element.
+			[array[currentIndex], array[randomIndex]] = [
+				array[randomIndex], array[currentIndex]];
 		}
-	  
+
 		return array;
 	};
 	if (_return_array === null || _return_array.length == 0) {
@@ -84,21 +85,21 @@ const Post: React.FC<PostProps> = (props) => {
 		});
 	}
 	else {
-		let _index_row=0,_objectFit_array=["cover","cover","cover","cover","cover"];
+		let _index_row = 0, _objectFit_array = ["cover", "cover", "cover", "cover", "cover"];
 		if (_return_array.length < 6) {
 			for (let i = 0; i < 5; i++) {
 				if (_return_array[i]) {
-					_objectFit_array[i]="cover";
+					_objectFit_array[i] = "cover";
 				} else {
-					_return_array[i]=_return_array[_index_row];
+					_return_array[i] = _return_array[_index_row];
 					_index_row++;
-					_objectFit_array[i]="contain";
+					_objectFit_array[i] = "contain";
 				}
-			} 
-		}else{
-			_return_array=_return_array.shift();
+			}
+		} else {
+			_return_array = _return_array.shift();
 		}
-		_return_array=shuffle(_return_array);
+		_return_array = shuffle(_return_array);
 		return new ImageResponse(
 			(
 				<div
@@ -120,12 +121,12 @@ const Post: React.FC<PostProps> = (props) => {
 							flexDirection: 'row',
 						}}
 					>
-						<img style={{ right: 5, bottom: 5, objectFit: '${_objectFit_array[0]}' }}
+						<Image style={{ right: 5, bottom: 5, objectFit: '${_objectFit_array[0]}' }}
 							alt="avatar"
 							width="600"
 							height="800"
 							src="${_return_array[0]}"
-						/><img style={{ bottom: 5, objectFit: '${_objectFit_array[1]}' }}
+						/><Image style={{ bottom: 5, objectFit: '${_objectFit_array[1]}' }}
 							alt="avatar"
 							width="600"
 							height="800"
@@ -139,13 +140,13 @@ const Post: React.FC<PostProps> = (props) => {
 							flexDirection: 'row',
 						}}
 					>
-						<img style={{ right: 10, objectFit: '${_objectFit_array[2]}' }}
+						<Image style={{ right: 10, objectFit: '${_objectFit_array[2]}' }}
 							alt="avatar"
 							width="400"
 							height="400"
 							src="${_return_array[2]}"
 						/>
-						<img style={{ right: 5, objectFit: '${_objectFit_array[3]}' }}
+						<Image style={{ right: 5, objectFit: '${_objectFit_array[3]}' }}
 							alt="avatar"
 							width="400"
 							height="400"
@@ -155,7 +156,7 @@ const Post: React.FC<PostProps> = (props) => {
 							style={{
 								display: 'flex'
 							}}>
-							<img style={{objectFit:'${_objectFit_array[4]}'}}
+							<Image style={{ objectFit: '${_objectFit_array[4]}' }}
 								alt="avatar"
 								width="400"
 								height="400"
