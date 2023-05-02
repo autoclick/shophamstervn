@@ -80,19 +80,10 @@ const Post: React.FC<PostProps> = (props) => {
 				<meta property="og:site_name" content={host.split('.')[0]} />
 				<meta property="article:published_time" content={post.dateGmt} />
 				<meta property="article:modified_time" content={post.modifiedGmt} />
-				<meta property="og:image" content={`https://${host}/api/${path}`} />
-				<meta
-					property="og:image:alt"
-					content={post.title}
-				/>
 				<title>{post.title}</title>
 			</Head>
 			<div className="post-container">
 				<h1>{post.title}</h1>
-				<img
-					src={`https://${host}/api/${path}`}
-					alt={post.title}
-				/>
 				<article dangerouslySetInnerHTML={{ __html: post.content }} />
 			</div>
 		</>
