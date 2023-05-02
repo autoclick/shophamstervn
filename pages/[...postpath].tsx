@@ -25,7 +25,7 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
 	}
 	const query = gql`
 		{
-			post(id: "/${path}/", idType: URI) {
+			post(id: "/20-buc-anh-cuc-hai-huoc/", idType: URI) {
 				id
 				excerpt
 				title
