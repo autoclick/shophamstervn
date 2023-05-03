@@ -1,6 +1,7 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import { GraphQLClient, gql } from 'graphql-request';
 import { ImageResponse } from '@vercel/og';
+import Image from 'next/image';
 export const config = {
   runtime: 'edge',
 }
@@ -18,7 +19,7 @@ const query = gql`
 
 export default async function handler() {
   const data = await graphQLClient.request(query);
-  if (!data["post"]) {
+  if (!data||!data["post"]) {
     return new ImageResponse(<>{'Not found photos'} </>, {
       width: 1200,
       height: 1200,

@@ -1,5 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
+import Image from 'next/image';
 import { GetServerSideProps } from 'next';
 import { GraphQLClient, gql } from 'graphql-request';
 
@@ -38,7 +39,7 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
 	`;
 
 	const data = await graphQLClient.request(query);
-	if (!data["post"]) {
+	if (!data||!data["post"]) {
 		return {
 			notFound: true,
 		};
