@@ -86,12 +86,12 @@ export default async function handler() {
                   flexDirection: 'row',
                 }}
             >
-              <img style={objectFitArray[0]}
+              <img style={{objectFitArray[0]}}
                 alt="avatar"
                 width="600"
                 height="800"
                 src={srcArray[0]}
-              /> <img style={objectFitArray[1]}
+              /> <img style={{objectFitArray[1]}}
                 alt="avatar"
                 width="600"
                 height="800"
@@ -105,13 +105,13 @@ export default async function handler() {
                 flexDirection: 'row',
               }}
             >
-              <img style={objectFitArray[2]}
+              <img style={{objectFitArray[2]}}
                 alt="avatar"
                 width="400"
                 height="400"
                 src={srcArray[2]}
               />
-              <img style={objectFitArray[3]}
+              <img style={{objectFitArray[3]}}
                 alt="avatar"
                 width="400"
                 height="400"
@@ -122,7 +122,7 @@ export default async function handler() {
               {
                 display: 'flex'
               }}>
-              <img style={objectFitArray[0]}
+              <img style={{objectFitArray[4]}}
                 alt="avatar"
                 width="400"
                 height="400"
