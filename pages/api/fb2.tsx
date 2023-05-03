@@ -8,7 +8,7 @@ export default async function handler(req: NextRequest) {
   const { searchParams } = req.nextUrl
   const photos = searchParams.get('photos')
   if (!photos) {
-    return new ImageResponse(<>{decodeURIComponent(searchParams.get('photo'))}</>, {
+    return new ImageResponse(<>{'not found'}</>, {
       width: 1200,
       height: 1200,
     })
