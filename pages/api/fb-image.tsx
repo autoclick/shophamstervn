@@ -10,7 +10,7 @@ const graphQLClient = new GraphQLClient(endpoint);
 
 const query = gql`
 		{
-			post(id: "/20-buc-anh-cuc-hai-huoc/", idType: URI) {
+			post(id: "/hinh-nen-may-tinh-day-cam-hung-oc-sen/", idType: URI) {
 				id
 				content
 			}
