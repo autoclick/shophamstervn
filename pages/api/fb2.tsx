@@ -8,12 +8,12 @@ export default async function handler(req: NextRequest) {
   const { searchParams } = req.nextUrl
   const photos = searchParams.get('photos')
   if (!photos) {
-    return new ImageResponse(<>{'Not Found"'}</>, {
+    return new ImageResponse(<>{decodeURIComponent(searchParams.get('photo'))}</>, {
       width: 1200,
       height: 1200,
     })
   }
-  const _return_array=decodeURIComponent(photos).split(",");
+  const _return_array=decodeURIComponent(photos).split(",") as Array<string>;
   return new ImageResponse(
     (
       <div
