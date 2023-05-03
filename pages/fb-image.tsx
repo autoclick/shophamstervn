@@ -3,9 +3,6 @@ import { ImageResponse } from '@vercel/og';
 import Image from 'next/image';
 import { NextRequest } from 'next/server'
 import { GraphQLClient, gql } from 'graphql-request';
-export const config = {
-  runtime: 'experimental-edge',
-}
 
 export default async function handler(req: NextRequest) {
 
