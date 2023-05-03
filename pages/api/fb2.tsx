@@ -13,7 +13,12 @@ export default async function handler(req: NextRequest) {
       height: 1200,
     })
   }
-  const _return_array=decodeURIComponent(photos).split(",") as Array<string>;
+  // const _return_array=decodeURIComponent(photos).split(",") as Array<string>;
+  const _return_array=decodeURIComponent(photos);
+  return new ImageResponse(<>{_return_array}</>, {
+    width: 1200,
+    height: 1200,
+  });
   return new ImageResponse(
     (
       <div
