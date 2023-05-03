@@ -5,19 +5,19 @@ import { GraphQLClient, gql } from 'graphql-request';
 export const config = {
   runtime: 'edge',
 }
-const endpoint = process.env.GRAPHQL_ENDPOINT as string;
-const graphQLClient = new GraphQLClient(endpoint);
-
-const query = gql`
-		{
-			post(id: "/hinh-nen-may-tinh-day-cam-hung-oc-sen/", idType: URI) {
-				id
-				content
-			}
-		}
-	`;
 
 export default async function handler() {
+
+const endpoint = process.env.GRAPHQL_ENDPOINT as string;
+const graphQLClient = new GraphQLClient(endpoint);
+  const query = gql`
+  {
+    post(id: "/hinh-nen-may-tinh-day-cam-hung-oc-sen/", idType: URI) {
+      id
+      content
+    }
+  }
+  `;
   const data = await graphQLClient.request(query);
   if (!data.post) {
     return new ImageResponse(<>{'Not found photos'} </>, {
