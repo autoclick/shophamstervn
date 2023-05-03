@@ -1,6 +1,5 @@
 import { ImageResponse } from '@vercel/og';
 import { NextRequest } from 'next/server';
-import Image from 'next/image';
 export const config = {
   runtime: 'edge',
 }
@@ -13,12 +12,7 @@ export default async function handler(req: NextRequest) {
       height: 1200,
     })
   }
-  // const _return_array=decodeURIComponent(photos).split(",") as Array<string>;
-  const _return_array=decodeURIComponent(photos);
-  return new ImageResponse(<>{_return_array}</>, {
-    width: 1200,
-    height: 1200,
-  });
+  const _return_array=decodeURIComponent(photos).split(",") as Array<string>;
   return new ImageResponse(
     (
       <div
@@ -41,12 +35,12 @@ export default async function handler(req: NextRequest) {
               flexDirection: 'row',
             }}
         >
-          <Image style={{ right: 5, bottom: 5, objectFit: 'cover' }}
+          <img style={{ right: 5, bottom: 5, objectFit: 'cover' }}
             alt="avatar"
             width="600"
             height="800"
             src={_return_array[0]}
-          /> <Image style={{ bottom: 5, objectFit: 'cover' }}
+          /> <img style={{ bottom: 5, objectFit: 'cover' }}
             alt="avatar"
             width="600"
             height="800"
@@ -60,13 +54,13 @@ export default async function handler(req: NextRequest) {
             flexDirection: 'row',
           }}
         >
-          <Image style={{ right: 10, objectFit: 'cover' }}
+          <img style={{ right: 10, objectFit: 'cover' }}
             alt="avatar"
             width="400"
             height="400"
             src={_return_array[2]}
           />
-          <Image style={{ right: 5, objectFit: 'cover' }}
+          <img style={{ right: 5, objectFit: 'cover' }}
             alt="avatar"
             width="400"
             height="400"
@@ -77,7 +71,7 @@ export default async function handler(req: NextRequest) {
           {
             display: 'flex'
           }}>
-          <Image style={{ objectFit: 'cover' }}
+          <img style={{ objectFit: 'cover' }}
             alt="avatar"
             width="400"
             height="400"
