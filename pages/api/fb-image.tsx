@@ -50,15 +50,15 @@ export default async function handler() {
     }
     else {
       let _index_row = 0;
-      let objectFitArray = ["cover", "cover", "cover", "cover", "cover"];
+      // let objectFitArray = ["cover", "cover", "cover", "cover", "cover"];
       if (_return_array.length < 6) {
         for (let i = 0; i < 5; i++) {
           if (_return_array[i]) {
-            objectFitArray[i] = "cover";
+            // objectFitArray[i] = "cover";
           } else {
             _return_array[i] = _return_array[_index_row];
             _index_row++;
-            objectFitArray[i] = "contain";
+            // objectFitArray[i] = "contain";
           }
         }
       } else {
@@ -89,12 +89,12 @@ export default async function handler() {
                   flexDirection: 'row',
                 }}
             >
-              <img style={{ right: 5, bottom: 5, objectFit: `${_objectFit_array[0]}` }}
+              <img style={{ right: 5, bottom: 5, objectFit: 'cover' }}
                 alt="avatar"
                 width="600"
                 height="800"
                 src={_return_array[0]}
-              /> <img style={{ bottom: 5, objectFit: `${_objectFit_array[1]}` }}
+              /> <img style={{ bottom: 5, objectFit: 'cover' }}
                 alt="avatar"
                 width="600"
                 height="800"
@@ -108,13 +108,13 @@ export default async function handler() {
                 flexDirection: 'row',
               }}
             >
-              <img style={{ right: 10, objectFit: `${_objectFit_array[2]}` }}
+              <img style={{ right: 10, objectFit: 'cover' }}
                 alt="avatar"
                 width="400"
                 height="400"
                 src={_return_array[2]}
               />
-              <img style={{ right: 5, objectFit: `${_objectFit_array[3]}` }}
+              <img style={{ right: 5, objectFit: 'cover' }}
                 alt="avatar"
                 width="400"
                 height="400"
@@ -125,7 +125,7 @@ export default async function handler() {
               {
                 display: 'flex'
               }}>
-              <img style={{ objectFit: `${_objectFit_array[4]}` }}
+              <img style={{ objectFit: 'cover' }}
                 alt="avatar"
                 width="400"
                 height="400"
