@@ -1,7 +1,7 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-import { GraphQLClient, gql } from 'graphql-request';
 import { ImageResponse } from '@vercel/og';
 import Image from 'next/image';
+import { GraphQLClient, gql } from 'graphql-request';
 export const config = {
   runtime: 'edge',
 }
@@ -90,12 +90,12 @@ export default async function handler() {
                   flexDirection: 'row',
                 }}
             >
-              <img style={{ right: 5, bottom: 5, objectFit: 'cover' }}
+              <Image style={{ right: 5, bottom: 5, objectFit: 'cover' }}
                 alt="avatar"
                 width="600"
                 height="800"
                 src={_return_array[0]}
-              /> <img style={{ bottom: 5, objectFit: 'cover' }}
+              /> <Image style={{ bottom: 5, objectFit: 'cover' }}
                 alt="avatar"
                 width="600"
                 height="800"
@@ -109,13 +109,13 @@ export default async function handler() {
                 flexDirection: 'row',
               }}
             >
-              <img style={{ right: 10, objectFit: 'cover' }}
+              <Image style={{ right: 10, objectFit: 'cover' }}
                 alt="avatar"
                 width="400"
                 height="400"
                 src={_return_array[2]}
               />
-              <img style={{ right: 5, objectFit: 'cover' }}
+              <Image style={{ right: 5, objectFit: 'cover' }}
                 alt="avatar"
                 width="400"
                 height="400"
@@ -126,7 +126,7 @@ export default async function handler() {
               {
                 display: 'flex'
               }}>
-              <img style={{ objectFit: 'cover' }}
+              <Image style={{ objectFit: 'cover' }}
                 alt="avatar"
                 width="400"
                 height="400"
