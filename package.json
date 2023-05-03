@@ -10,10 +10,10 @@
   },
   "dependencies": {
     "graphql": "latest",
-    "graphql-request": "latest",
+    "graphql-request": "^5.0.0",
     "next": "latest",
     "react": "latest",
-    "react-dom": "latest",
+    "react-dom": "18.2.0",
     "@vercel/og": "latest"
   },
   "devDependencies": {
