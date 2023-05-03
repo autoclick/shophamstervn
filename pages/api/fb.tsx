@@ -91,7 +91,7 @@ export default async function handler(req: NextRequest) {
 </div>
 </div>
     , {
-    width: 200,
-    height: 200,
+    width: 1200,
+    height: 1200,
   });
 }
