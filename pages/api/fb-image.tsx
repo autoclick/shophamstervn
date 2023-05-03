@@ -3,7 +3,9 @@ import { ImageResponse } from '@vercel/og';
 import Image from 'next/image';
 import { NextRequest } from 'next/server'
 import { GraphQLClient, gql } from 'graphql-request';
-
+export const config = {
+  runtime: 'edge',
+}
 export default async function handler(req: NextRequest) {
 
 const endpoint = process.env.GRAPHQL_ENDPOINT as string;
