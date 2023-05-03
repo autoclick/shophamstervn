@@ -24,7 +24,7 @@ export default async function handler() {
       height: 1200,
     });
   } else {
-    let srcArray = data.post.content.match(/(https?:\/\/\S+(?:png|jpe?g|gif))/);
+    let _return_array = data.post.content.match(/(https?:\/\/\S+(?:png|jpe?g|gif))/);
     const shuffle = (array: Array<string>) => {
       let currentIndex = array.length, randomIndex;
 
@@ -42,7 +42,7 @@ export default async function handler() {
 
       return array;
     };
-    if (srcArray === null || srcArray.length == 0) {
+    if (_return_array === null || _return_array.length == 0) {
       return new ImageResponse(<>{'Not found photos'} </>, {
         width: 1200,
         height: 1200,
@@ -50,20 +50,23 @@ export default async function handler() {
     }
     else {
       let _index_row = 0;
-      let objectFitArray = ["right: 5, bottom: 5, objectFit: 'cover'", "bottom: 5, objectFit: 'cover'", "right: 10, objectFit: 'cover'", "right: 5, objectFit: 'cover'", "objectFit: 'cover'"];
-      if (srcArray.length < 6) {
+      let objectFitArray = ["cover", "cover", "cover", "cover", "cover"];
+      if (_return_array.length < 6) {
         for (let i = 0; i < 5; i++) {
-          if (!srcArray[i]) {
-            srcArray[i] = srcArray[_index_row];
+          if (_return_array[i]) {
+            objectFitArray[i] = "cover";
+          } else {
+            _return_array[i] = _return_array[_index_row];
             _index_row++;
-            objectFitArray[i] = objectFitArray[i].replace("cover", "contain");
+            objectFitArray[i] = "contain";
           }
         }
       } else {
-        srcArray = srcArray.shift();
+        _return_array = _return_array.shift();
       }
-      srcArray = shuffle(srcArray);
-      const srcCount=srcArray.length;
+      _return_array = shuffle(_return_array);
+
+      const srcCount=_return_array.length;
       return new ImageResponse(
         (
           <div
@@ -86,16 +89,16 @@ export default async function handler() {
                   flexDirection: 'row',
                 }}
             >
-              <img style={{objectFitArray[0]}}
+              <img style={{ right: 5, bottom: 5, objectFit: `${_objectFit_array[0]}` }}
                 alt="avatar"
                 width="600"
                 height="800"
-                src={srcArray[0]}
-              /> <img style={{objectFitArray[1]}}
+                src={_return_array[0]}
+              /> <img style={{ bottom: 5, objectFit: `${_objectFit_array[1]}` }}
                 alt="avatar"
                 width="600"
                 height="800"
-                src={srcArray[1]}
+                src={_return_array[1]}
               />
 
             </div>
@@ -105,28 +108,28 @@ export default async function handler() {
                 flexDirection: 'row',
               }}
             >
-              <img style={{objectFitArray[2]}}
+              <img style={{ right: 10, objectFit: `${_objectFit_array[2]}` }}
                 alt="avatar"
                 width="400"
                 height="400"
-                src={srcArray[2]}
+                src={_return_array[2]}
               />
-              <img style={{objectFitArray[3]}}
+              <img style={{ right: 5, objectFit: `${_objectFit_array[3]}` }}
                 alt="avatar"
                 width="400"
                 height="400"
-                src={srcArray[3]}
+                src={_return_array[3]}
               />
             </div>
             <div style={
               {
                 display: 'flex'
               }}>
-              <img style={{objectFitArray[4]}}
+              <img style={{ objectFit: `${_objectFit_array[4]}` }}
                 alt="avatar"
                 width="400"
                 height="400"
-                src={srcArray[4]}
+                src={_return_array[4]}
               />
               <div style={{ display: 'flex', position: 'absolute', alignItems: 'center', justifyContent: 'center', top: '0', left: '0', right: '0', bottom: '0', }}>
                 <span style={{ position: 'absolute', top: '0', left: '0', width: '100%', height: '100%', background: 'black', opacity: '0.4', }}> </span>
