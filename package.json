@@ -13,7 +13,7 @@
     "graphql-request": "latest",
     "next": "latest",
     "react": "latest",
-    "react-dom": "18.2.0",
+    "react-dom": "latest",
     "@vercel/og": "latest"
   },
   "devDependencies": {

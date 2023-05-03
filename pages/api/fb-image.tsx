@@ -19,7 +19,7 @@ const query = gql`
 
 export default async function handler() {
   const data = await graphQLClient.request(query);
-  if (!data||!data["post"]) {
+  if (!data.post) {
     return new ImageResponse(<>{'Not found photos'} </>, {
       width: 1200,
       height: 1200,
