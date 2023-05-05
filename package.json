@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "graphql": "latest",
-    "graphql-request": "5.1.0",
+    "graphql-request": "latest",
     "next": "latest",
     "react": "latest",
     "react-dom": "18.2.0",
