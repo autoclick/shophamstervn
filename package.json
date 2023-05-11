@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "graphql": "12.18.0",
+    "graphql": "latest",
     "graphql-request": "5.1.0",
     "axios": "latest",
     "next": "latest",
