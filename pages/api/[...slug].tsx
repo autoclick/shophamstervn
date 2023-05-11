@@ -1,9 +1,9 @@
 import React from 'react';
 import Head from 'next/head';
 import parseHTML from "html-react-parser";
-import { axios, AxiosRequestConfig } from 'axios';
+import { Axios, AxiosRequestConfig } from 'axios';
 
-const client = axios.create({ baseURL: `https://shophamsterthainguyen.15w.xyz/graphql` });
+const client = Axios.create({ baseURL: `https://shophamsterthainguyen.15w.xyz/graphql` });
 
 client.interceptors.response.use(
 	({ data }) => data,
