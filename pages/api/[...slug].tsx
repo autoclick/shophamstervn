@@ -3,7 +3,7 @@ import Head from 'next/head';
 import parseHTML from "html-react-parser";
 import axios from 'axios';
 import { AxiosRequestConfig } from 'axios';
-import { GetStaticProps, GetStaticPaths } from 'next'
+import { GetStaticProps, GetStaticPaths, getAllPages } from 'next'
 
 const client = axios.create({ baseURL: `https://shophamsterthainguyen.15w.xyz/graphql` });
 
