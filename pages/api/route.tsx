@@ -4,7 +4,7 @@ export const config = {
   runtime: 'edge',
 };
 
-export default async function GET() {
+export default async function GET(request) {
    return  new ImageResponse(
       (
         <div
