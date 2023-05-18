@@ -96,7 +96,7 @@ export default async function handler(req: NextRequest) {
    background: 'black',
    opacity: '0.4',
  }}></span>
- <span>+{_rand}</span>
+ <span style={{ fontSize: 100, fontWeight: 700, }}>+{_rand}</span>
  </div>
  </div>
 </div>
