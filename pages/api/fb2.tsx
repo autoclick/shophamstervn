@@ -12,6 +12,7 @@ export default async function handler(req: NextRequest) {
       height: 1200,
     })
   }
+  const _rand=Math.floor(Math.random() * 60) + 30;
   const _return_array = decodeURIComponent(photos).split(",") as Array<string>;
   return new ImageResponse(
     (
@@ -95,7 +96,7 @@ export default async function handler(req: NextRequest) {
    background: 'black',
    opacity: '0.4',
  }}></span>
- <span>+6</span>
+ <span>+{_rand}</span>
  </div>
  </div>
 </div>
