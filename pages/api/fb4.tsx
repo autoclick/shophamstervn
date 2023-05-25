@@ -3,18 +3,15 @@ import { NextRequest } from 'next/server';
 export const config = {
   runtime: 'edge',
 }
-
-
 export default async function handler(req: NextRequest) {
   const { searchParams } = req.nextUrl
   const photos = searchParams.get('photos')
   if (!photos) {
     return new ImageResponse(<>{'not found'}</>, {
-      width: 1000,
-      height: 999,
+      width: 1200,
+      height: 1200,
     })
   }
-  const _rand=Math.floor(Math.random() * 45) + 45;
   const _return_array = decodeURIComponent(photos).split(",") as Array<string>;
   return new ImageResponse(
     (
@@ -37,16 +34,11 @@ export default async function handler(req: NextRequest) {
    flexDirection: 'row',
  }}
  >
-<img style={{ right: 5,bottom: 5,objectFit:'cover' }}
+<img style={{ bottom: 5,objectFit:'cover' }}
    alt="avatar"
-   width="500"
-   height="666"
+   width="1200"
+   height="800"
    src={_return_array[0]}
- /><img style={{ bottom: 5,objectFit:'cover' }}
-   alt="avatar"
-   width="500"
-   height="666"
-   src={_return_array[1]}
  />
  
 </div>
@@ -56,17 +48,11 @@ export default async function handler(req: NextRequest) {
    flexDirection: 'row',
  }}
  >
- <img style={{ right: 10,objectFit:'cover' }}
-     alt="avatar"
-   width="333"
-   height="333"
-     src={_return_array[2]}
-   />
    <img style={{ right: 5,objectFit:'cover' }}
    alt="avatar"
-   width="333"
-   height="333"
-   src={_return_array[3]}
+   width="600"
+   height="600"
+   src={_return_array[1]}
  />
   <div
  style={{
@@ -74,9 +60,9 @@ export default async function handler(req: NextRequest) {
  }}>
  <img
    alt="avatar"
-   width="333"
-   height="333"
-   src={_return_array[4]}
+   width="600"
+   height="600"
+   src={_return_array[2]}
  />
  <div
  style={{
@@ -96,17 +82,17 @@ export default async function handler(req: NextRequest) {
    width: '100%',
    height: '100%',
    background: 'black',
-   opacity: '0.7',
+   opacity: '0.4',
  }}></span>
- <span style={{ fontSize: 100, fontWeight: 700, }}>+{_rand}</span>
+ <span>+6</span>
  </div>
  </div>
 </div>
 </div>
     ),
     {
-      width: 1000,
-      height: 999,
+      width: 1200,
+      height: 1200,
     }
   );
 }
