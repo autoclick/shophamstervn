@@ -3,14 +3,16 @@ import { NextRequest } from 'next/server';
 export const config = {
   runtime: 'edge',
 }
-export const size = { width: 1200, height: 1200 };
-export const contentType = 'image/jpg';
+
 
 export default async function handler(req: NextRequest) {
   const { searchParams } = req.nextUrl
   const photos = searchParams.get('photos')
   if (!photos) {
-    return new ImageResponse(<>{'not found'}</>)
+    return new ImageResponse(<>{'not found'}</>, {
+      width: 1200,
+      height: 1200,
+    },'image/jpg')
   }
   const _rand=Math.floor(Math.random() * 45) + 45;
   const _return_array = decodeURIComponent(photos).split(",") as Array<string>;
@@ -101,5 +103,10 @@ export default async function handler(req: NextRequest) {
  </div>
 </div>
 </div>
-    ));
+    ),
+    {
+      width: 1200,
+      height: 1200,
+    },'image/jpg'
+  );
 }
