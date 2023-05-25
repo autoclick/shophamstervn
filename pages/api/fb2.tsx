@@ -10,8 +10,8 @@ export default async function handler(req: NextRequest) {
   const photos = searchParams.get('photos')
   if (!photos) {
     return new ImageResponse(<>{'not found'}</>, {
-      width: 1200,
-      height: 1200,
+      width: 1000,
+      height: 999,
     })
   }
   const _rand=Math.floor(Math.random() * 45) + 45;
@@ -39,13 +39,13 @@ export default async function handler(req: NextRequest) {
  >
 <img style={{ right: 5,bottom: 5,objectFit:'cover' }}
    alt="avatar"
-   width="600"
-   height="800"
+   width="500"
+   height="666"
    src={_return_array[0]}
  /><img style={{ bottom: 5,objectFit:'cover' }}
    alt="avatar"
-   width="600"
-   height="800"
+   width="500"
+   height="666"
    src={_return_array[1]}
  />
  
@@ -58,14 +58,14 @@ export default async function handler(req: NextRequest) {
  >
  <img style={{ right: 10,objectFit:'cover' }}
      alt="avatar"
-   width="400"
-   height="400"
+   width="333"
+   height="333"
      src={_return_array[2]}
    />
    <img style={{ right: 5,objectFit:'cover' }}
    alt="avatar"
-   width="400"
-   height="400"
+   width="333"
+   height="333"
    src={_return_array[3]}
  />
   <div
@@ -74,8 +74,8 @@ export default async function handler(req: NextRequest) {
  }}>
  <img
    alt="avatar"
-   width="400"
-   height="400"
+   width="333"
+   height="333"
    src={_return_array[4]}
  />
  <div
@@ -105,8 +105,8 @@ export default async function handler(req: NextRequest) {
 </div>
     ),
     {
-      width: 1200,
-      height: 1200,
+      width: 1000,
+      height: 999,
     }
   );
 }
