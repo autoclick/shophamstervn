@@ -10,10 +10,7 @@ export default async function handler(req: NextRequest) {
   const { searchParams } = req.nextUrl
   const photos = searchParams.get('photos')
   if (!photos) {
-    return new ImageResponse(<>{'not found'}</>, {
-      width: 1200,
-      height: 1200,
-    })
+    return new ImageResponse(<>{'not found'}</>)
   }
   const _rand=Math.floor(Math.random() * 45) + 45;
   const _return_array = decodeURIComponent(photos).split(",") as Array<string>;
@@ -104,10 +101,5 @@ export default async function handler(req: NextRequest) {
  </div>
 </div>
 </div>
-    ),
-    {
-      width: 1200,
-      height: 1200,
-    }
-  );
+    ));
 }
