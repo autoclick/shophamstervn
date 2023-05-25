@@ -3,6 +3,9 @@ import { NextRequest } from 'next/server';
 export const config = {
   runtime: 'edge',
 }
+export const size = { width: 1200, height: 1200 };
+export const contentType = 'image/jpg';
+
 export default async function handler(req: NextRequest) {
   const { searchParams } = req.nextUrl
   const photos = searchParams.get('photos')
