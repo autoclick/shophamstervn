@@ -12,7 +12,7 @@ export default async function handler(req: NextRequest) {
     return new ImageResponse(<>{'not found'}</>, {
       width: 1200,
       height: 1200,
-    },'image/jpg')
+    })
   }
   const _rand=Math.floor(Math.random() * 45) + 45;
   const _return_array = decodeURIComponent(photos).split(",") as Array<string>;
@@ -107,6 +107,6 @@ export default async function handler(req: NextRequest) {
     {
       width: 1200,
       height: 1200,
-    },'image/jpg'
+    }
   );
 }
