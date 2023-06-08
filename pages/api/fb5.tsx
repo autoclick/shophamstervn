@@ -71,7 +71,8 @@ export default async function handler(req: NextRequest) {
  />
   <div
  style={{
-   display: 'flex'
+   display: 'flex',
+   top:5
  }}>
  <img
    alt="avatar"
