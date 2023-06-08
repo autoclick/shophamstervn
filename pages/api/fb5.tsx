@@ -10,8 +10,8 @@ export default async function handler(req: NextRequest) {
   const photos = searchParams.get('photos')
   if (!photos) {
     return new ImageResponse(<>{'not found'}</>, {
-      width: 600,
-      height: 600,
+      width: 680,
+      height: 356,
     })
   }
   const _rand=Math.floor(Math.random() * 45) + 45;
@@ -25,47 +25,48 @@ export default async function handler(req: NextRequest) {
    background: '#f6f6f6',
    width: '100%',
    height: '100%',
-   flexDirection: 'column',
+   flexDirection: 'row',
    justifyContent: 'center',
    alignItems: 'center',
    display: 'flex',
  }}
  >
+<img style={{ right: 10,objectFit:'cover' }}
+   alt="avatar"
+   width="220"
+   height="356"
+   src={_return_array[0]}
+ />
 <div
  style={{
    display: 'flex',
-   flexDirection: 'row',
+   flexDirection: 'column',
+   left:10,
  }}
- >
-<img style={{ right: 5,bottom: 5,objectFit:'cover' }}
+ ><img style={{ bottom: 5,right:10,objectFit:'cover' }}
    alt="avatar"
-   width="300"
-   height="400"
-   src={_return_array[0]}
- /><img style={{ bottom: 5,objectFit:'cover' }}
-   alt="avatar"
-   width="300"
-   height="400"
+   width="220"
+   height="173"
    src={_return_array[1]}
  />
- 
+ <img style={{ top:5, right: 10,objectFit:'cover' }}
+     alt="avatar"
+     width="220"
+     height="173"
+     src={_return_array[2]}
+   />
 </div>
 <div
  style={{
    display: 'flex',
-   flexDirection: 'row',
+   flexDirection: 'column',
+   left:10
  }}
  >
- <img style={{ right: 10,objectFit:'cover' }}
-     alt="avatar"
-   width="200"
-   height="200"
-     src={_return_array[2]}
-   />
-   <img style={{ right: 5,objectFit:'cover' }}
+   <img style={{ bottom:5,objectFit:'cover' }}
    alt="avatar"
-   width="200"
-   height="200"
+   width="220"
+   height="173"
    src={_return_array[3]}
  />
   <div
@@ -74,8 +75,8 @@ export default async function handler(req: NextRequest) {
  }}>
  <img
    alt="avatar"
-   width="200"
-   height="200"
+   width="220"
+   height="173"
    src={_return_array[4]}
  />
  <div
@@ -105,8 +106,8 @@ export default async function handler(req: NextRequest) {
 </div>
     ),
     {
-      width: 600,
-      height: 600,
+      width: 680,
+      height: 356,
     }
   );
 }
