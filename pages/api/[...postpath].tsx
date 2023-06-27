@@ -1,6 +1,5 @@
 import React from 'react';
 import Head from 'next/head';
-import Image from 'next/image';
 import { GetServerSideProps } from 'next';
 import { GraphQLClient, gql } from 'graphql-request';
 
@@ -34,6 +33,11 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
 				dateGmt
 				modifiedGmt
 				content
+				author {
+					node {
+						name
+					}
+				}
 			}
 		}
 	`;
@@ -68,6 +72,13 @@ const Post: React.FC<PostProps> = (props) => {
 		else str = str.toString();
 		return str.replace(/(<([^>]+)>)/gi, '').replace(/\[[^\]]*\]/, '');
 	};
+	const getImage = (str: string) => {
+		if (str === null || str === '') return 'https://t3.ftcdn.net/jpg/02/48/42/64/360_F_248426448_NVKLywWqArG2ADUxDq6QprtIzsF82dMF.jpg';
+		else str = str.toString();
+		const arrayMatch=str.match(/(https?:\/\/\S+(?:png|jpe?g|gif))/);
+		const _return=arrayMatch?arrayMatch[0]:'https://t3.ftcdn.net/jpg/02/48/42/64/360_F_248426448_NVKLywWqArG2ADUxDq6QprtIzsF82dMF.jpg';
+		return _return;
+	};
 
 	return (
 		<>
@@ -81,10 +92,19 @@ const Post: React.FC<PostProps> = (props) => {
 				<meta property="og:site_name" content={host.split('.')[0]} />
 				<meta property="article:published_time" content={post.dateGmt} />
 				<meta property="article:modified_time" content={post.modifiedGmt} />
+				<meta property="og:image" content={getImage(post.content)} />
+				<meta
+					property="og:image:alt"
+					content={post.title}
+				/>
 				<title>{post.title}</title>
 			</Head>
 			<div className="post-container">
 				<h1>{post.title}</h1>
+				<img
+					src={getImage(post.content)}
+					alt={post.title}
+				/>
 				<article dangerouslySetInnerHTML={{ __html: post.content }} />
 			</div>
 		</>
