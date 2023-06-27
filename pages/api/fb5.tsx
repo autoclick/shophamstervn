@@ -15,7 +15,10 @@ export default async function handler(req: NextRequest) {
     })
   }
   const _rand=Math.floor(Math.random() * 45) + 45;
-  const _return_array = decodeURIComponent(photos).split(",") as Array<string>;
+  let _return_array = decodeURIComponent(photos).split(",") as Array<string>;
+  for (let i = 0; i < _return_array.length; i++) {
+    _return_array[i]= _return_array[i].replace(/\?.*/,'');
+  }
   return new ImageResponse(
     (
  <div
