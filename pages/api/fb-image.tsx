@@ -25,7 +25,7 @@ const graphQLClient = new GraphQLClient(endpoint);
       height: 1200,
     });
   } else {
-    let _return_array = data.post.content.match(/(https?:\/\/\S+(?:png|jpe?g|gif))/);
+    let _return_array = data.post.content.match(/(https?:\/\/\S+(?:png|jpe?g|gif))/g);
     const shuffle = (array: Array<string>) => {
       let currentIndex = array.length, randomIndex;
 
