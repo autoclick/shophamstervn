@@ -14,7 +14,7 @@ export default async function handler(req: NextRequest) {
       height: 356,
     })
   }
-  const _rand=Math.floor(Math.random() * 45) + 45;
+  const _rand=Math.floor(Math.random() * 10) + 5;
   let _return_array = decodeURIComponent(photos).split(",") as Array<string>;
   for (let i = 0; i < _return_array.length; i++) {
     _return_array[i]= _return_array[i].replace(/\?.*/,'');
@@ -103,7 +103,7 @@ export default async function handler(req: NextRequest) {
    background: 'black',
    opacity: '0.7',
  }}></span>
- <span style={{ fontSize: 50, fontWeight: 700, }}>+{_rand}</span>
+ <span style={{ fontSize: 50, fontWeight: 500, }}>+{_rand}</span>
  </div>
  </div>
 </div>
