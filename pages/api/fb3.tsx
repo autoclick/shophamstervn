@@ -11,14 +11,17 @@ export default async function handler(req: NextRequest) {
   if (!photos) {
     return new ImageResponse(<>{'not found'}</>, {
       width: 1000,
-      height: 999,
+      height: 1000,
     })
   }
-  const _rand=Math.floor(Math.random() * 45) + 45;
-  const _return_array = decodeURIComponent(photos).split(",") as Array<string>;
+  const _rand=Math.floor(Math.random() * 10) + 5;
+  let _return_array = decodeURIComponent(photos).split(",") as Array<string>;
+  for (let i = 0; i < _return_array.length; i++) {
+    _return_array[i]= _return_array[i].replace(/\?.*/,'');
+  }
   return new ImageResponse(
     (
- <div
+      <div
  style={{
    fontSize: 60,
    color: 'white',
@@ -37,16 +40,11 @@ export default async function handler(req: NextRequest) {
    flexDirection: 'row',
  }}
  >
-<img style={{ right: 5,bottom: 5,objectFit:'cover' }}
+<img style={{ bottom: 5,objectFit:'cover' }}
    alt="avatar"
-   width="500"
-   height="666"
+   width="1000"
+   height="500"
    src={_return_array[0]}
- /><img style={{ bottom: 5,objectFit:'cover' }}
-   alt="avatar"
-   width="500"
-   height="666"
-   src={_return_array[1]}
  />
  
 </div>
@@ -56,17 +54,11 @@ export default async function handler(req: NextRequest) {
    flexDirection: 'row',
  }}
  >
- <img style={{ right: 10,objectFit:'cover' }}
-     alt="avatar"
-   width="333"
-   height="333"
-     src={_return_array[2]}
-   />
    <img style={{ right: 5,objectFit:'cover' }}
    alt="avatar"
-   width="333"
-   height="333"
-   src={_return_array[3]}
+   width="500"
+   height="500"
+   src={_return_array[1]}
  />
   <div
  style={{
@@ -74,9 +66,9 @@ export default async function handler(req: NextRequest) {
  }}>
  <img
    alt="avatar"
-   width="333"
-   height="333"
-   src={_return_array[4]}
+   width="500"
+   height="500"
+   src={_return_array[2]}
  />
  <div
  style={{
@@ -96,9 +88,9 @@ export default async function handler(req: NextRequest) {
    width: '100%',
    height: '100%',
    background: 'black',
-   opacity: '0.7',
+   opacity: '0.4',
  }}></span>
- <span style={{ fontSize: 100, fontWeight: 700, }}>+{_rand}</span>
+  <span style={{ fontSize:  50, fontWeight: 500, }}>+{_rand}</span>
  </div>
  </div>
 </div>
@@ -106,7 +98,7 @@ export default async function handler(req: NextRequest) {
     ),
     {
       width: 1000,
-      height: 999,
+      height: 1000,
     }
   );
 }
