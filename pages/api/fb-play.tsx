@@ -18,8 +18,7 @@ export default async function handler(req: NextRequest) {
           backgroundImage: 'url(https://i0.wp.com/dautruongtoanhoc.net/wp-content/uploads/2023/06/354256541_274777718496526_7522258956370652042_n-754x1024.jpg)',
         }}
       >
-        <Image 
-          alt="play button"
+        <img 
           width="150"
           height="150"
           priority
