@@ -15,7 +15,7 @@ export default async function handler(req: NextRequest) {
       height: 1000,
     })
   }
-  photo=decodeURIComponent(photo);
+  photo=decodeURIComponent(photo).replace(/\?.*/,'');;
   return new ImageResponse(
     (
       <div
