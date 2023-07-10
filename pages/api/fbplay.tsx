@@ -20,7 +20,7 @@ export default async function handler(req: NextRequest) {
     (
       <span style={{ fontSize: 10, fontWeight: 50,
         justifyContent: 'center',
-        alignItems: 'center' }}>${photo}</span>
+        alignItems: 'center' }}>{photo}</span>
     ),
     {
       width: 1000,
