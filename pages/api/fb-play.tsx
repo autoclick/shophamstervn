@@ -1,6 +1,6 @@
 import { ImageResponse } from '@vercel/og'
 import { NextRequest } from 'next/server'
-import profilePic from '../public/play.png'
+import profilePic from '../../public/play.png'
 export const config = {
   runtime: 'edge',
 }
