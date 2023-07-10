@@ -18,7 +18,7 @@ export default async function handler(req: NextRequest) {
   const photo="url("+decodeURIComponent(photo1).replace(/\?.*/,'')+")";
   return new ImageResponse(
     (
-      <span style={{ fontSize: 50, fontWeight: 500,
+      <span style={{ fontSize: 10, fontWeight: 50,
         justifyContent: 'center',
         alignItems: 'center' }}>${photo}</span>
     ),
