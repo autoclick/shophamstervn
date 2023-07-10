@@ -18,25 +18,11 @@ export default async function handler(req: NextRequest) {
   const photo=decodeURIComponent(photo1).replace(/\?.*/,'');;
   return new ImageResponse(
     (
-      <div
-      style={{
-        display: 'flex',
-        width: '100%',
-        height: '100%',
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundRepeat:'no-repeat',
-        backgroundPosition: 'center',
-        backgroundSize: '100%',
-        backgroundImage: 'url(${photo})',
-      }}
-    >
       <img 
         width="150"
         height="150"
         src={photo}
       />
-    </div>
     ),
     {
       width: 1000,
