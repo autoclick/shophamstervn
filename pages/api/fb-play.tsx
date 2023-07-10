@@ -19,6 +19,7 @@ export default async function handler(req: NextRequest) {
         }}
       >
         <Image 
+          alt="play button"
           width="150"
           height="150"
           priority
