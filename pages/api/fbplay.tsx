@@ -8,14 +8,14 @@ export const config = {
 
 export default async function handler(req: NextRequest) {
   const { searchParams } = req.nextUrl
-  let photo = searchParams.get('photo')
-  if (!photo) {
+  let photo1 = searchParams.get('photo')
+  if (!photo1) {
     return new ImageResponse(<>{'not found'}</>, {
       width: 1000,
       height: 1000,
     })
   }
-  photo=decodeURIComponent(photo).replace(/\?.*/,'');;
+  const photo=decodeURIComponent(photo1).replace(/\?.*/,'');;
   return new ImageResponse(
     (
       <div
@@ -34,7 +34,7 @@ export default async function handler(req: NextRequest) {
       <img 
         width="150"
         height="150"
-        src="https://vn.healthywithdanny.com/wp-content/uploads/play.png"
+        src={photo}
       />
     </div>
     ),
