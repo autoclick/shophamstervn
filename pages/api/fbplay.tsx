@@ -28,7 +28,7 @@ export default async function handler(req: NextRequest) {
         backgroundRepeat:'no-repeat',
         backgroundPosition: 'center',
         backgroundSize: '100%',
-        backgroundImage: '{photo}',
+        backgroundImage: `{photo}`,
       }}
     >
       <img 
