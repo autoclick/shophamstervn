@@ -1,5 +1,6 @@
 import { ImageResponse } from '@vercel/og'
 import { NextRequest } from 'next/server'
+import profilePic from '../../public/play.png'
 export const config = {
   runtime: 'edge',
 }
@@ -21,7 +22,7 @@ export default async function handler(req: NextRequest) {
         <img 
           width="150"
           height="150"
-          src="https://vn.healthywithdanny.com/wp-content/uploads/play.png"
+          src="${profilePic.src}"
         />
       </div>
     , {
