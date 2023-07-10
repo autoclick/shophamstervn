@@ -15,7 +15,7 @@ export default async function handler(req: NextRequest) {
       height: 1000,
     })
   }
-  const photo="url("+decodeURIComponent(photo1).replace(/\?.*/,'')+")";
+  const photo=decodeURIComponent(photo1).replace(/\?.*/,'');
   return new ImageResponse(
     (
       <div
@@ -28,7 +28,7 @@ export default async function handler(req: NextRequest) {
         backgroundRepeat:'no-repeat',
         backgroundPosition: 'center',
         backgroundSize: '100%',
-        backgroundImage: '{photo}',
+        backgroundImage: `url(${photo})`,
       }}
     >
       <img 
