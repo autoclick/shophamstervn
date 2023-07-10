@@ -8,7 +8,7 @@ export const config = {
 
 export default async function handler(req: NextRequest) {
   const { searchParams } = req.nextUrl
-  let photo1 = searchParams.get('photo')
+  const photo1 = searchParams.get('photo')
   if (!photo1) {
     return new ImageResponse(<>{'not found'}</>, {
       width: 1000,
@@ -28,7 +28,7 @@ export default async function handler(req: NextRequest) {
         backgroundRepeat:'no-repeat',
         backgroundPosition: 'center',
         backgroundSize: '100%',
-        backgroundImage: `{photo}`,
+        backgroundImage: '{photo}',
       }}
     >
       <img 
