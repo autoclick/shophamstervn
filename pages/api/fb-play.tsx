@@ -22,7 +22,7 @@ export default async function handler(req: NextRequest) {
         <img 
           width="150"
           height="150"
-          src={profilePic.src}
+          src={profilePic}
         />
       </div>
     , {
