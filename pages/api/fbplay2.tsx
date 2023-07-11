@@ -26,8 +26,8 @@ export default async function handler(req: NextRequest) {
         justifyContent: 'center',
         alignItems: 'center',
         backgroundRepeat:'no-repeat',
-        backgroundPosition: 'center',
-        backgroundSize: '100%',
+        backgroundPosition: 'center center',
+        backgroundSize: 'cover',
         backgroundImage: `url(${photo})`,
       }}
     >
@@ -39,8 +39,8 @@ export default async function handler(req: NextRequest) {
     </div>
     ),
     {
-      width: 680,
-      height: 356,
+      width: 800,
+      height: 400,
     }
   );
 }
