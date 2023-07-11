@@ -27,7 +27,7 @@ export default async function handler(req: NextRequest) {
         alignItems: 'center',
         backgroundRepeat:'repeat',
         backgroundPosition: 'center',
-        backgroundSize: '100%',
+        backgroundSize: 'cover',
         backgroundColor:'black',
         backgroundImage: `url(${photo})`,
       }}
