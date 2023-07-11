@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@types/node": "18.8.4",
     "axios": "latest",
     "next": "latest",
     "react": "latest",
