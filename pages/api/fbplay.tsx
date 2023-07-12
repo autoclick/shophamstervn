@@ -8,14 +8,21 @@ export const config = {
 
 export default async function handler(req: NextRequest) {
   const { searchParams } = req.nextUrl
-  const photo1 = searchParams.get('photo')
-  if (!photo1) {
+
+  const photos = searchParams.get('photos')
+  if (!photos) {
     return new ImageResponse(<>{'not found'}</>, {
-      width: 1000,
-      height: 1000,
+      width: 680,
+      height: 356,
     })
   }
-  const photo=decodeURIComponent(photo1).replace(/\?.*/,'');
+  const _rand=Math.floor(Math.random() * 10) + 5;
+  let _return_array = decodeURIComponent(photos).split(",") as Array<string>;
+  for (let i = 0; i < _return_array.length; i++) {
+    _return_array[i]= _return_array[i].replace(/\?.*/,'');
+  }
+  const random = Math.floor(Math.random() * _return_array.length);
+  const photo=_return_array[random];
   return new ImageResponse(
     (
       <div
