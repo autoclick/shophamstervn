@@ -28,20 +28,22 @@ export default async function handler(req: NextRequest) {
       <div
       style={{
         display: 'flex',
-        position: 'absolute',
-        background: 'black',
+        flexDirection: 'row',
+        objectFit: 'cover',
         width: '100vw',
         height: '100vh',
-        flexDirection: 'column',
-        backgroundRepeat:'no-repeat',
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundRepeat: 'repeat',
         backgroundPosition: 'center center',
-        backgroundSize: 'cover',
+        backgroundSize: '1000px 1000px',
+        backgroundColor: 'black',
         backgroundImage: `url(${photo})`,
       }}
     >
       <img 
-        width="100"
-        height="100"
+        width="150"
+        height="150"
         src="https://vn.healthywithdanny.com/wp-content/uploads/play.png"
       />
     </div>

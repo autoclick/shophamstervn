@@ -8,41 +8,46 @@ export const config = {
 
 export default async function handler(req: NextRequest) {
   const { searchParams } = req.nextUrl
-  
+
   const photos = searchParams.get('photos')
   if (!photos) {
     return new ImageResponse(<>{'not found'}</>, {
-      width: 680,
-      height: 356,
+      width: 800,
+      height: 400,
     })
   }
-  const _rand=Math.floor(Math.random() * 10) + 5;
+  const _rand = Math.floor(Math.random() * 10) + 5;
   let _return_array = decodeURIComponent(photos).split(",") as Array<string>;
   for (let i = 0; i < _return_array.length; i++) {
-    _return_array[i]= _return_array[i].replace(/\?.*/,'');
+    _return_array[i] = _return_array[i].replace(/\?.*/, '');
   }
   const random = Math.floor(Math.random() * _return_array.length);
-  const photo=_return_array[random];
+  const photo = _return_array[random];
   return new ImageResponse(
     (
+
       <div
-      style={{
-        display: 'flex',
-        width: '100vw',
-        height: '100vh',
-        backgroundRepeat:'repeat',
-        backgroundPosition: 'center center',
-        backgroundSize: 'contain',
-        backgroundColor:'black',
-        backgroundImage: `url(${photo})`,
-      }}
-    >
-      <img 
-        width="150"
-        height="150"
-        src="https://vn.healthywithdanny.com/wp-content/uploads/play.png"
-      />
-    </div>
+        style={{
+          display: 'flex',
+          flexDirection: 'row',
+          objectFit: 'cover',
+          width: '100vw',
+          height: '50vh',
+          justifyContent: 'center',
+          alignItems: 'center',
+          backgroundRepeat: 'no-repeat',
+          backgroundPosition: 'center center',
+          backgroundSize: '800px 400px',
+          backgroundColor: 'black',
+          backgroundImage: `url(${photo})`
+        }}
+      >
+        <img
+          width="150"
+          height="150"
+          src="https://vn.healthywithdanny.com/wp-content/uploads/play.png"
+        />
+      </div>
     ),
     {
       width: 800,
