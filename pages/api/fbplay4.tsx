@@ -42,7 +42,7 @@ export default async function handler(req: NextRequest) {
             bottom: 5,
             objectFit: 'cover',
             width: '100vw',
-            height: '100vh',
+            height: '67vh',
             justifyContent: 'center',
             alignItems: 'center',
             backgroundRepeat: 'no-repeat',
