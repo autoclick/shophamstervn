@@ -32,7 +32,7 @@ export default async function handler(req: NextRequest) {
           flexDirection: 'row',
           objectFit: 'cover',
           width: '100vw',
-          height: '50vh',
+          height: '100vh',
           justifyContent: 'center',
           alignItems: 'center',
           backgroundRepeat: 'no-repeat',
