@@ -42,13 +42,13 @@ export default async function handler(req: NextRequest) {
             bottom: 5,
             objectFit: 'cover',
             width: '100vw',
-            height: '67vh',
+            height: '66.7vh',
             justifyContent: 'center',
             alignItems: 'center',
             backgroundRepeat: 'no-repeat',
             backgroundPosition: 'center center',
-            backgroundSize: '100%',
-            backgroundColor: 'white',
+            backgroundSize: '1000px 667px',
+            backgroundColor: 'black',
             backgroundImage: `url(${_return_array[0]})`,
           }}
         >
