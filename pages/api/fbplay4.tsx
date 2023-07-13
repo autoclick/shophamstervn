@@ -49,7 +49,7 @@ export default async function handler(req: NextRequest) {
             backgroundPosition: 'center center',
             backgroundSize: '100%',
             backgroundColor: 'white',
-            backgroundImage: `url(${_return_array[1]})`,
+            backgroundImage: `url(${_return_array[0]})`,
           }}
         >
           <img
