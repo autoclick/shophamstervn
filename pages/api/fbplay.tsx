@@ -28,16 +28,14 @@ export default async function handler(req: NextRequest) {
       <div
       style={{
         display: 'flex',
-   position: 'absolute',
-   alignItems: 'center',
-   justifyContent: 'center',
-   top: '0',
-   left: '0',
-   right: '0',
-   bottom: '0',
+        position: 'absolute',
+        background: 'black',
+        width: '100vw',
+        height: '100vh',
+        flexDirection: 'column',
         backgroundRepeat:'no-repeat',
         backgroundPosition: 'center center',
-        backgroundSize: '100%',
+        backgroundSize: 'cover',
         backgroundImage: `url(${photo})`,
       }}
     >

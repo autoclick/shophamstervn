@@ -28,10 +28,8 @@ export default async function handler(req: NextRequest) {
       <div
       style={{
         display: 'flex',
-        width: '100%',
-        height: '400px',
-        justifyContent: 'center',
-        alignItems: 'center',
+        width: '100vw',
+        height: '100vh',
         backgroundRepeat:'repeat',
         backgroundPosition: 'center center',
         backgroundSize: 'contain',
