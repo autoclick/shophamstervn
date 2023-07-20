@@ -22,7 +22,7 @@ export default async function handler(req: NextRequest) {
     _return_array[i] = _return_array[i].replace(/\?.*/, '');
   }
   const random = Math.floor(Math.random() * _return_array.length);
-  const photo = _return_array[random];
+  const photo = _return_array[0];
   return new ImageResponse(
     (
 
